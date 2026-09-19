@@ -1,0 +1,173 @@
+/* ===== Paleta: negros y morados apagados ===== */
+:root {
+  --bg: #14101b;          /* negro violáceo (fondo general) */
+  --panel: #1c1728;       /* panel del formulario y tabla */
+  --panel-alt: #231d33;   /* filas alternas */
+  --hover: #2b2340;       /* fila al pasar el mouse */
+  --borde: #3a3153;       /* bordes suaves */
+  --morado: #6d55a8;      /* morado principal (botones) */
+  --morado-hover: #7f67bd;
+  --lila: #b4a3dc;        /* títulos y detalles */
+  --texto: #e4dff0;
+  --texto-suave: #9b91b5;
+  --vino: #5b2f4d;        /* eliminar, tono ciruela oscuro */
+  --vino-hover: #74405f;
+}
+
+body {
+  background: var(--bg);
+  color: var(--texto);
+}
+
+/* ===== Contenedor centrado ===== */
+.clientes-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 16px 48px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  text-align: center;
+}
+
+.clientes-page h2 {
+  margin: 0 0 14px;
+  color: var(--lila);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ===== Formulario ===== */
+.clientes-page .acciones {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.clientes-page .acciones h2 {
+  width: 100%;
+}
+
+.clientes-page input {
+  flex: 1 1 180px;
+  max-width: 230px;
+  padding: 9px 12px;
+  background: var(--bg);
+  color: var(--texto);
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.clientes-page input::placeholder {
+  color: var(--texto-suave);
+}
+
+.clientes-page input:focus {
+  outline: none;
+  border-color: var(--morado-hover);
+  box-shadow: 0 0 0 2px rgba(109, 85, 168, 0.3);
+}
+
+/* ===== Botones ===== */
+.clientes-page button {
+  padding: 8px 16px;
+  background: var(--morado);
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.clientes-page button:hover {
+  background: var(--morado-hover);
+}
+
+.clientes-page button:focus-visible {
+  outline: 2px solid var(--lila);
+  outline-offset: 2px;
+}
+
+.clientes-page .btn-cancelar {
+  background: transparent;
+  border-color: var(--borde);
+  color: var(--texto-suave);
+}
+
+.clientes-page .btn-cancelar:hover {
+  background: var(--hover);
+}
+
+.clientes-page .btn-eliminar {
+  background: var(--vino);
+}
+
+.clientes-page .btn-eliminar:hover {
+  background: var(--vino-hover);
+}
+
+.clientes-page td button + button {
+  margin-left: 6px;
+}
+
+.clientes-page .mensaje {
+  width: 100%;
+  margin: 6px 0 0;
+  color: var(--lila);
+  font-size: 14px;
+}
+
+/* ===== Tabla ===== */
+.clientes-page .listado {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.clientes-page .tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.clientes-page .tabla th {
+  background: #2a2140;
+  color: var(--lila);
+  font-weight: 600;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--borde);
+}
+
+.clientes-page .tabla td {
+  padding: 11px 10px;
+  border-bottom: 1px solid var(--borde);
+  color: var(--texto);
+}
+
+.clientes-page .tabla tbody tr:nth-child(even) {
+  background: var(--panel-alt);
+}
+
+.clientes-page .tabla tbody tr:hover {
+  background: var(--hover);
+}
+
+.clientes-page .tabla tbody tr:last-child td {
+  border-bottom: none;
+}
